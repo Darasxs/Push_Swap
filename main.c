@@ -6,16 +6,11 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:47 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/05/23 14:44:36 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/05/29 15:02:49 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	swap(t_list **stack)
-{
-	t_list *
-}
 
 int	main(int argc, char **argv)
 {
