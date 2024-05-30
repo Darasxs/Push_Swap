@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 12:34:54 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/05/30 17:31:20 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/05/30 18:03:17 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ static t_list	*last_elem(t_list *stack)
 		stack = stack->next;
 	return (stack);
 }
-
 void	ra(t_list **stack, int check)
 {
 	t_list	*tmp1;
