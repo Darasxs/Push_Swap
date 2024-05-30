@@ -1,63 +1,70 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 14:09:16 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/05/30 17:24:08 by dpaluszk         ###   ########.fr       */
+/*   Created: 2024/05/30 12:34:54 by dpaluszk          #+#    #+#             */
+/*   Updated: 2024/05/30 17:31:20 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_list **stack, int check)
+static t_list	*last_elem(t_list *stack)
+{
+	while(stack && stack->next)
+		stack = stack->next;
+	return (stack);
+}
+
+void	ra(t_list **stack, int check)
 {
 	t_list	*tmp1;
 	t_list	*tmp2;
-	
+
 	if(check == 1)
-		write(1, "sa\n", 3);
+		write(1, "ra\n", 3);
 	if (stack != NULL)
 	{
-		if (*stack && (*stack)->next)
+		if(*stack && (*stack)->next)
 		{
-			tmp1 = (*stack);
-			tmp2 = (*stack)->next;
-			tmp1->next = tmp1->next->next;
+			tmp1 = *stack;
+			*stack = (*stack)->next;
+			tmp1->next = NULL;
+			tmp2 = last_elem(*stack);
 			tmp2->next = tmp1;
-			*stack = tmp2;
 		}
 	}
 }
 
-void	sb(t_list **stack, int check)
+void	rb(t_list **stack, int check)
 {
 	t_list	*tmp1;
 	t_list	*tmp2;
 
-	if (check == 1)
-		write(1, "sb\n", 3);
+	if(check == 1)
+		write(1, "rb\n", 3);
 	if (stack != NULL)
 	{
-		if (*stack && (*stack)->next)
+		if(*stack && (*stack)->next)
 		{
-			tmp1 = (*stack);
-			tmp2 = (*stack)->next;
-			tmp1->next = tmp1->next->next;
+			tmp1 = *stack;
+			*stack = (*stack)->next;
+			tmp1->next = NULL;
+			tmp2 = last_elem(*stack);
 			tmp2->next = tmp1;
-			*stack = tmp2;
 		}
 	}
 }
 
-void	ss(t_list **stack_a, t_list **stack_b)
+void	rr(t_list **stack_a, t_list **stack_b)
 {
 	if (stack_a != NULL && stack_b != NULL)
 	{
-		sa(stack_a, 0);
-		sb(stack_b, 0);
-		write(1, "ss\n", 3);
+		ra(stack_a, 0);
+		rb(stack_b, 0);
+		write(1, "rr\n", 3);
 	}
 }
