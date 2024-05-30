@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 15:09:50 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/05/29 18:15:58 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/05/30 12:25:56 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,22 @@ void	pa(t_list **stack_a, t_list **stack_b, int check)
 		}
 	}
 }
+
+void	pb(t_list **stack_a, t_list **stack_b, int check)
+{
+	t_list	*tmp;
+	
+	if(check == 1)
+		write(1, "pb", 3);
+	if(stack_a != NULL && stack_b != NULL)
+	{
+		if(*stack_a)
+		{
+			tmp = *stack_a;
+			*stack_a = (*stack_a)->next;
+			tmp->next = *stack_b;
+			*stack_a = tmp;
+		}
+	}
+}
+
