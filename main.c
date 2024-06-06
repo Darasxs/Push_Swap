@@ -6,74 +6,46 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:47 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/06/06 15:57:35 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/06/06 19:19:49 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_list(t_list *stack)
-{
-	t_list	*tmp;
-
-	while(stack)
-	{
-		tmp = stack;
-		stack = stack->next;
-		free(tmp->content);
-		free(tmp);
-	}
-}
-
-t_list	*initialize_stack(char **argv)
-{
-	size_t	i;
-	int		*number;
-	t_list	*stack;
-	t_list	*node;
-
-	stack = NULL;
-	i = 1;
-	while (argv[i])
-	{
-		number = malloc(sizeof(int));
-		if (!number)
-		{
-			free_list(stack);
-			return (NULL);
-		}
-		*number = ft_atoi(argv[i]);
-		node = ft_lstnew(number);
-		if (!node)
-		{
-			free(number);
-			free_list(stack);
-			return (NULL);
-		}
-		ft_lstadd_back(&stack, node);
-		i++;
-	}
-	return (stack);
-}
-
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
+	char	**arguments;
 
+	arguments = argv;
 	stack_a = NULL;
 	stack_b = NULL;
-	if (argc == 2)
-		argv = ft_split(argv[1], ' ');
-	stack_a = initialize_stack(argv);
+	
+	if (argc == 1 || (argc == 2 && argv[1][0] == 0))
+		return EXIT_FAILURE;
+	else if (argc == 2)
+	{
+		arguments = ft_split(argv[1], ' ');
+		stack_a = initialize_stack(arguments - 1);
+	}
+	else
+		stack_a = initialize_stack(arguments);
 	if (!stack_a)
 		return (EXIT_FAILURE);
+	
+	t_list	*tmp;
+	tmp = stack_a;
+	while(tmp != NULL)
+	{
+		printf("%d ", *tmp->content);
+		tmp = tmp->next;
+	}
+	return (0);
 }
 
 // if stack is sorted
 // do nothing
-
-// fix split - it doesn't read the first int
 
 // the program cannot work if it encounters any char
 
@@ -86,6 +58,3 @@ int	main(int argc, char **argv)
 // if 3 elements in the stack
 
 // use simple algorithm to sort it
-
-return (0);
-}

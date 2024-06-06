@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:44 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/06/03 15:53:40 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/06/06 18:34:54 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 void	sa(t_list **stack, int check);
 void	sb(t_list **stack, int check);
 void	ss(t_list **stack_a, t_list **stack_b);
+void	free_list(t_list *stack);
+t_list	*initialize_stack(char **argv);
 
 #endif
