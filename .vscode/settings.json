@@ -1,7 +1,9 @@
 {
 	"files.associations": {
 		"libft.h": "c",
-		"push_swap.h": "c"
+		"push_swap.h": "c",
+		"iterator": "c",
+		"stdio.h": "c"
 	},
 	"github.copilot.editor.enableAutoCompletions": false
 }

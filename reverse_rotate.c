@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 17:32:13 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/05/30 18:22:35 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/05/31 11:02:09 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	rra(t_list **stack, int check)
 {
 	t_list	*tmp1;
 	t_list	*tmp2;
-
 
 	if(check == 1)
 		write(1,"rra\n", 4);
@@ -42,8 +41,8 @@ void	rra(t_list **stack, int check)
 
 void	rrb(t_list **stack, int check)
 {
-	size_t	*tmp1;
-	size_t	*tmp2;
+	t_list	*tmp1;
+	t_list	*tmp2;
 
 	if (check == 1)
 		write(1, "rrb\n", 4);
@@ -51,7 +50,11 @@ void	rrb(t_list **stack, int check)
 	{
 		if(*stack && (*stack)->next)
 		{
-			
+			tmp1 = second_last_elem(*stack);
+			tmp2 = tmp1->next;
+			tmp1->next = NULL;
+			tmp2->next = *stack;
+			*stack = tmp2;
 		}
 	}
 }
