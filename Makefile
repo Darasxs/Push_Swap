@@ -6,12 +6,12 @@
 #    By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/21 10:11:49 by dpaluszk          #+#    #+#              #
-#    Updated: 2024/06/06 19:04:10 by dpaluszk         ###   ########.fr        #
+#    Updated: 2024/06/07 14:56:01 by dpaluszk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-SRC = main.c push.c rotate.c swap.c init.c free_list.c
+SRC = main.c push.c rotate.c swap.c init.c free_list.c checks.c
 OBJECTS = ${SRC:.c=.o}
 CC = cc
 FLAGS = -Wall -Wextra -Werror -g
