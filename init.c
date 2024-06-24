@@ -6,13 +6,13 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 17:55:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/06/07 16:14:33 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/06/24 18:57:04 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_atol(const char *str)
+static long	ft_atol(const char *str)
 {
 	long	result;
 	int		counter;
@@ -42,10 +42,10 @@ static int	ft_atol(const char *str)
 
 t_list	*initialize_stack(char **argv)
 {
-	size_t		i;
-	long		*number;
-	t_list		*stack;
-	t_list		*node;
+	size_t	i;
+	long	*number;
+	t_list	*stack;
+	t_list	*node;
 
 	stack = NULL;
 	i = 1;
@@ -60,6 +60,12 @@ t_list	*initialize_stack(char **argv)
 			return (NULL);
 		}
 		*number = ft_atol(argv[i]);
+		if(*number > INT_MAX || *number < INT_MIN)
+		{
+			free(number);
+			free_list(stack);
+			return NULL;
+		}
 		if (check_duplicate(stack, *number))
 		{
 			free(number);

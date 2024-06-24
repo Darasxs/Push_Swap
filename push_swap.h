@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:44 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/06/07 15:41:03 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/06/24 18:55:41 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <limits.h>
 
 //int		main(int argc, char **argv);
 void	pa(t_list **stack_a, t_list **stack_b);
