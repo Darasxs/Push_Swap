@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 17:55:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/06/24 18:57:04 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/06/25 18:25:42 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ t_list	*initialize_stack(char **argv)
 	t_list	*node;
 
 	stack = NULL;
-	i = 1;
+	i = 0;
 	while (argv[i])
 	{
 		if (string_error(argv[i]) == true)
