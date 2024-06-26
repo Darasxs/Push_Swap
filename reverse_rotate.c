@@ -6,13 +6,13 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 17:32:13 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/06/26 12:24:33 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/06/26 12:34:07 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_list	*second_last_e+lem(t_list *stack)
+static t_list	*second_last_elem(t_list *stack)
 {
 	while(stack && stack->next && stack->next->next)
 		stack = stack->next;

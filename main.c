@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:47 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/06/26 12:24:37 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/06/26 12:31:06 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char **argv)
 		if (ft_lstsize(stack_a) == 2)
 			sa(&stack_a, 1);
 		else if (ft_lstsize(stack_a) == 3)
-			ft_sort_three(&stack_a);
+			sort_three(&stack_a);
 	}
 	//	else
 	//		push_swap(&stack_a, &stack_b);
