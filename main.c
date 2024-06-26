@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:47 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/06/25 18:26:22 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/06/26 12:24:37 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,13 @@ int	main(int argc, char **argv)
 		stack_a = initialize_stack(arguments + 1);
 	if (!stack_a)
 		return (EXIT_FAILURE);
-	//if(!is_sorted(stack_a))
-	//{
-	//	if (len_of_stack(stack_a) == 2)
-	//		sa(&stack_a, 1);
-	//	else if (len_of_stack(stack_a) == 3)
-	//		sort_three(&stack_a);
+	if(!is_sorted(stack_a))
+	{
+		if (ft_lstsize(stack_a) == 2)
+			sa(&stack_a, 1);
+		else if (ft_lstsize(stack_a) == 3)
+			ft_sort_three(&stack_a);
+	}
 	//	else
 	//		push_swap(&stack_a, &stack_b);
 	//}

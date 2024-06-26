@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 19:02:00 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/06/25 18:55:15 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/06/26 10:50:51 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,11 @@ bool	is_sorted(t_list *head)
 	tmp = head;
 	while (tmp->next)
 	{
-		if (tmp->content > tmp->next->content)
-		{
-			write(1, "The stack is already sorted.\n", 30);
+		if (*(tmp->content) > *(tmp->next->content))
 			return (false);
-		}
 		tmp = tmp->next;
 	}
+	write(1, "The stack is already sorted.\n", 29);
 	return (true);
 }
 
