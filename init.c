@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 17:55:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/06/25 18:25:42 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/06/27 13:01:07 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static long	ft_atol(const char *str)
 t_list	*initialize_stack(char **argv)
 {
 	size_t	i;
-	long	*number;
+	long	number;
 	t_list	*stack;
 	t_list	*node;
 
@@ -51,34 +51,16 @@ t_list	*initialize_stack(char **argv)
 	i = 0;
 	while (argv[i])
 	{
-		if (string_error(argv[i]) == true)
-			return (NULL);
-		number = malloc(sizeof(long));
-		if (!number)
-		{
-			free_list(stack);
-			return (NULL);
-		}
-		*number = ft_atol(argv[i]);
-		if(*number > INT_MAX || *number < INT_MIN)
-		{
-			free(number);
-			free_list(stack);
-			return NULL;
-		}
-		if (check_duplicate(stack, *number))
-		{
-			free(number);
-			free_list(stack);
-			return (NULL);
-		}
+		if (string_error(argv[i]) == false)
+			return_error(&stack);
+		number = ft_atol(argv[i]);
+		if(number > INT_MAX || number < INT_MIN)
+			return_error(&stack);
+		if (check_duplicate(stack, number))
+			return_error(&stack);
 		node = ft_lstnew(number);
 		if (!node)
-		{
-			free(number);
-			free_list(stack);
-			return (NULL);
-		}
+			return_error(&stack);
 		ft_lstadd_back(&stack, node);
 		i++;
 	}

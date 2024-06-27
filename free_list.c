@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 17:54:29 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/06/06 18:34:09 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/06/27 12:58:13 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,14 @@ void	free_list(t_list *stack)
 	{
 		tmp = stack;
 		stack = stack->next;
-		free(tmp->content);
 		free(tmp);
 	}
+	stack = NULL;
+}
+int		return_error(t_list **stack)
+{
+	free_list(*stack);
+
+	write(1, "Error\n", 6);
+	exit(1);
 }

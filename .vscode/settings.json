@@ -3,7 +3,10 @@
 		"libft.h": "c",
 		"push_swap.h": "c",
 		"iterator": "c",
-		"stdio.h": "c"
+		"stdio.h": "c",
+		"climits": "c",
+		"sstream": "c",
+		"streambuf": "c"
 	},
 	"github.copilot.editor.enableAutoCompletions": false
 }

@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:47 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/06/26 12:31:06 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/06/27 12:57:10 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,8 @@ int	main(int argc, char **argv)
 	tmp = stack_a;
 	while(tmp != NULL)
 	{
-		printf("%d ", *tmp->content);
+		printf("%ld ", tmp->content);
 		tmp = tmp->next;
 	}
 	return (0);
 }
-
-// write len_of_stack function
-
-// nothing is specified when ints and strings are mixed. it's up to you
-
-// if 3 elements in the stack
-// use simple algorithm to sort it

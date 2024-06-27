@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 19:02:00 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/06/26 10:50:51 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/06/27 12:59:00 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ bool	is_sorted(t_list *head)
 	tmp = head;
 	while (tmp->next)
 	{
-		if (*(tmp->content) > *(tmp->next->content))
+		if (tmp->content > tmp->next->content)
 			return (false);
 		tmp = tmp->next;
 	}
-	write(1, "The stack is already sorted.\n", 29);
+	write(1, "OK.\n", 4);
 	return (true);
 }
 
@@ -34,11 +34,8 @@ bool	check_duplicate(t_list *head, long n)
 	tmp = head;
 	while (tmp)
 	{
-		if (*(tmp->content) == n)
-		{
-			write(1, "Error\n", 6);
+		if (tmp->content == n)
 			return (true);
-		}
 		tmp = tmp->next;
 	}
 	return (false);
@@ -46,14 +43,18 @@ bool	check_duplicate(t_list *head, long n)
 
 bool	string_error(char *str)
 {
+	int	counter;
+
+	counter = 0;
 	while (*str)
 	{
-		if (!(*str >= '0' && *str <= '9') && (*str != 32))
-		{	
-			write(1, "Error.\n", 6);
-			return (true);
-		}
+		if (*str == '-')
+			counter++;
+		else if (!(*str >= '0' && *str <= '9'))
+			return (false);
 		str++;
 	}
-	return (false);
+	if (counter > 1)
+		return (false);
+	return (true);
 }

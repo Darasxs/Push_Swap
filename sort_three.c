@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 10:55:24 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/06/26 12:34:31 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/06/27 13:00:29 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 static void	sort_three_logic(t_list **stack, t_list *first, t_list *second, t_list *third)
 {
-	if (*(second->content) > *(third->content)
-		&& *(first->content) < *(third->content))
+	if ((second->content > third->content)
+		&& (first->content < third->content))
 	{
 		rra(stack, 1);
 		sa(stack, 1);
 	}
-	else if (*(first->content) > *(second->content)
-		&& *(first->content) < *(third->content))
+	else if ((first->content > second->content)
+		&& (first->content < third->content))
 		sa(stack, 1);
-	else if (*(first->content) > *(third->content)
-		&& *(first->content) < *(second->content))
+	else if ((first->content > third->content)
+		&& (first->content < second->content))
 		rra(stack, 1);
-	else if (*(third->content) < *(second->content)
-		&& *(second->content) < *(first->content))
+	else if ((third->content < second->content)
+		&& (second->content < first->content))
 	{
 		sa(stack, 1);
 		rra(stack, 1);
 	}
-	else if (*(first->content) > *(second->content)
-		&& *(first->content) > *(third->content))
+	else if ((first->content > second->content)
+		&& (first->content > third->content))
 		ra(stack, 1);
 }
 void	sort_three(t_list **stack)
