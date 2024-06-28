@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:47 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/06/27 12:57:10 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/06/28 15:27:54 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,33 @@ int	main(int argc, char **argv)
 			sa(&stack_a, 1);
 		else if (ft_lstsize(stack_a) == 3)
 			sort_three(&stack_a);
+		else
+			push_swap(&stack_a, &stack_b);
 	}
-	//	else
-	//		push_swap(&stack_a, &stack_b);
-	//}
-	// free(&stack_a); - uncomment this at the end
+	//free(&stack_a);
 	t_list	*tmp;
+	t_list	*tmp2;
+	
 	tmp = stack_a;
+	tmp2 = stack_b;
+
+	printf("stack_a:\n");
 	while(tmp != NULL)
 	{
-		printf("%ld ", tmp->content);
+		printf("%d\n", tmp->content);
 		tmp = tmp->next;
+	}
+	printf("stack_b:\n");
+	while(tmp2 != NULL)
+	{
+		printf("%d\n", tmp2->content);
+		tmp2 = tmp2->next;
 	}
 	return (0);
 }
+
+
+// turk algorithm:
+// push everything from stack_a to stack_b in descending order
+// if we push the new biggest/smallest number from stack a, it should be placed above the old biggest number
+// then we have to calculate for each number we want to push, how many operations are necessary

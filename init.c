@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 17:55:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/06/27 13:01:07 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/06/28 13:52:42 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ t_list	*initialize_stack(char **argv)
 	i = 0;
 	while (argv[i])
 	{
+		if(*argv[i] == '\0')
+			return_error(&stack);
 		if (string_error(argv[i]) == false)
 			return_error(&stack);
 		number = ft_atol(argv[i]);
