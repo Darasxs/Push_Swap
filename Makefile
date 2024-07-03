@@ -6,13 +6,13 @@
 #    By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/21 10:11:49 by dpaluszk          #+#    #+#              #
-#    Updated: 2024/06/28 14:22:52 by dpaluszk         ###   ########.fr        #
+#    Updated: 2024/07/02 16:53:53 by dpaluszk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 SRC = main.c push.c rotate.c swap.c init.c free_list.c checks.c \
-		sort_three.c reverse_rotate.c push_swap.c
+		sort_three.c reverse_rotate.c push_swap.c sort.c
 OBJECTS = ${SRC:.c=.o}
 CC = cc
 FLAGS = -Wall -Wextra -Werror -g

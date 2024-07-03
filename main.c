@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:47 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/06/28 15:27:54 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/02 16:58:47 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,3 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
-
-
-// turk algorithm:
-// push everything from stack_a to stack_b in descending order
-// if we push the new biggest/smallest number from stack a, it should be placed above the old biggest number
-// then we have to calculate for each number we want to push, how many operations are necessary
