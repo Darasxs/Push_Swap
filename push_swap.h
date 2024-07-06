@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:44 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/06/26 15:55:21 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/06 13:58:09 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ bool	is_sorted(t_list *head);
 bool	string_error(char *str);
 bool	check_duplicate(t_list *head, long n);
 void	sort_three(t_list **stack);
+t_list	*find_smallest_number(t_list *stack);
+
 
 #endif

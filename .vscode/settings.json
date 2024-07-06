@@ -6,7 +6,9 @@
 		"stdio.h": "c",
 		"climits": "c",
 		"sstream": "c",
-		"streambuf": "c"
+		"streambuf": "c",
+		"__functional_03": "c",
+		"functional": "c"
 	},
 	"github.copilot.editor.enableAutoCompletions": false
 }
