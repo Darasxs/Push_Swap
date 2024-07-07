@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 13:44:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/07 13:22:37 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/07 20:12:12 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	match_nodes(t_list *stack_a, t_list *stack_b)
 		tmp = stack_a;
 		while (tmp)
 		{
-			if (stack_b->content < tmp->content && (target == NULL
-					|| tmp->content > target->content))
+			if ((target == NULL || tmp->content > target->content)
+				&& stack_b->content < tmp->content)
 				target = tmp;
 			tmp = tmp->next;
 		}
@@ -35,6 +35,8 @@ void	match_nodes(t_list *stack_a, t_list *stack_b)
 		stack_b = stack_b->next;
 	}
 }
+
+ 
 
 void	push_swap(t_list **stack_a, t_list **stack_b)
 {
