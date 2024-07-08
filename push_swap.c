@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 13:44:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/07 20:12:12 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/08 10:09:19 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,22 @@ void	match_nodes(t_list *stack_a, t_list *stack_b)
 	}
 }
 
- 
+void	initialize_nodes(t_list *stack_a, t_list *stack_b)
+{
+	present_location(stack_a);
+	present_location(stack_b);
+	match_nodes(stack_a, stack_b);
+	set_price(stack_a, stack_b);
+	find_cheapest(stack_a, stack_b);
+}
 
 void	push_swap(t_list **stack_a, t_list **stack_b)
 {
 	while ((*stack_a)->next->next->next != NULL)
 		pa(stack_a, stack_b);
 	sort_three(stack_a);
+	while(stack_b)
+	{
+		initialize_nodes(stack_a, stack_b);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:44 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/07 20:14:10 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/08 10:09:36 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ bool	string_error(char *str);
 bool	check_duplicate(t_list *head, long n);
 void	sort_three(t_list **stack);
 t_list	*find_smallest_number(t_list *stack);
-void	initialize(t_list *stack_a, t_list *stack_b);
+void	initialize_nodes(t_list *stack_a, t_list *stack_b);
 
 #endif
