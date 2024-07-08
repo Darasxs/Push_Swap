@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 13:44:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/08 10:09:19 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/08 20:11:53 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,26 @@ void	initialize_nodes(t_list *stack_a, t_list *stack_b)
 	find_cheapest(stack_a, stack_b);
 }
 
+void	stacks_rotation(t_list **stack_a, t_list **stack_b)
+{
+
+}
+void	push_nodes_back(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*cheapest;
+		
+	cheapest = (*stack_a)->cheapest;
+	if(stack_a && *stack_a)
+	{
+		if(cheapest->above_medium)
+			ra(stack_a, 1);
+		else
+			rra(stack_a, 1);
+	}
+	
+}
+
+
 void	push_swap(t_list **stack_a, t_list **stack_b)
 {
 	while ((*stack_a)->next->next->next != NULL)
@@ -53,5 +73,6 @@ void	push_swap(t_list **stack_a, t_list **stack_b)
 	while(stack_b)
 	{
 		initialize_nodes(stack_a, stack_b);
+		push_back(stack_a, stack_b);
 	}
 }
