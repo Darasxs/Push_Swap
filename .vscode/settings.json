@@ -8,7 +8,8 @@
 		"sstream": "c",
 		"streambuf": "c",
 		"__functional_03": "c",
-		"functional": "c"
+		"functional": "c",
+		"stddef.h": "c"
 	},
 	"github.copilot.editor.enableAutoCompletions": false
 }
