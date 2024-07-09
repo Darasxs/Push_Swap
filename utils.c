@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 12:59:04 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/08 18:16:44 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/09 19:12:02 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	present_location(t_list *stack)
 	i = 0;
 	if (!stack)
 		return ;
-	length = ft_lstize(stack);
+	length = ft_lstsize(stack);
 	medium = length / 2;
 	while (stack)
 	{
@@ -91,15 +91,15 @@ void	determine_cheapest(t_list *stack_b)
 	best_match->cheapest = true;
 }
 
-//t_list	*return_cheapest(t_list *stack)
-//{
-//	if (!stack)
-//		return (NULL);
-//	while (stack)
-//	{
-//		if (stack->cheapest)
-//			return (stack);
-//		stack = stack->next;
-//	}
-//	return (NULL);
-//}
+t_list	*find_cheapest_node(t_list *stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack)
+	{
+		if (stack->cheapest)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
+}

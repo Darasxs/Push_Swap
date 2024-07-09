@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:44 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/09 18:55:07 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/09 19:05:19 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ bool	check_duplicate(t_list *head, long n);
 void	sort_three(t_list **stack);
 void	present_location(t_list *stack);
 t_list	*find_smallest_number(t_list *stack);
+void	determine_price(t_list *stack_a, t_list *stack_b);
+void	determine_cheapest(t_list *stack_b);
 void	initialize_nodes(t_list *stack_a, t_list *stack_b);
 void	stacks_rotation(t_list **stack, t_list *cheapest, char a_or_b);
 void	push_nodes_back(t_list **stack_a, t_list **stack_b);
-
-//t_list	*return_cheapest(t_list *stack);
-
+t_list	*find_cheapest_node(t_list *stack);
 
 #endif

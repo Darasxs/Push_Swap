@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 13:44:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/09 19:00:27 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/09 19:12:16 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void	initialize_nodes(t_list *stack_a, t_list *stack_b)
 	present_location(stack_a);
 	present_location(stack_b);
 	match_nodes(stack_a, stack_b);
-	set_price(stack_a, stack_b);
-	find_cheapest(stack_a, stack_b);
+	determine_price(stack_a, stack_b);
+	determine_cheapest(stack_b);
 }
 
 void	stacks_rotation(t_list **stack, t_list *cheapest, char a_or_b)
@@ -70,18 +70,18 @@ void	push_nodes_back(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*cheapest;
 		
-	cheapest = (*stack_a)->cheapest;
+	cheapest = find_cheapest_node(*stack_b);
 	if(cheapest->above_medium && cheapest->target->above_medium)
 	{
 		rr(stack_a, stack_b);
-		present_location(stack_a);
-		present_location(stack_b);
+		present_location(*stack_a);
+		present_location(*stack_b);
 	}
 	else if(cheapest->above_medium == false && cheapest->target->above_medium == false)
 	{
 		rrr(stack_a, stack_b);
-		present_location(stack_a);
-		present_location(stack_b);
+		present_location(*stack_a);
+		present_location(*stack_b);
 	}
 	stacks_rotation(stack_a, cheapest, 'b');
 	stacks_rotation(stack_b, cheapest->target, 'a');
@@ -95,7 +95,7 @@ void	push_swap(t_list **stack_a, t_list **stack_b)
 	sort_three(stack_a);
 	while(stack_b)
 	{
-		initialize_nodes(stack_a, stack_b);
-		push_back(stack_a, stack_b);
+		initialize_nodes(*stack_a, *stack_b);
+		push_nodes_back(stack_a, stack_b);
 	}
 }
