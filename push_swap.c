@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 13:44:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/10 14:09:29 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/10 17:25:57 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	stacks_rotation(t_list **stack, t_list *cheapest, char a_or_b)
 void	push_nodes_back(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*cheapest;
-		
+
 	cheapest = find_cheapest_node(*stack_b);
 	if(cheapest->above_medium && cheapest->target->above_medium)
 	{
@@ -92,9 +92,11 @@ void	push_nodes_back(t_list **stack_a, t_list **stack_b)
 void	push_swap(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*smallest;
+	int		len;
 
-	while ((*stack_a)->next->next->next != NULL)
-		pa(stack_a, stack_b);
+	len = ft_lstsize(*stack_a);
+	while (len > 3)
+		pb(stack_a, stack_b);
 	sort_three(stack_a);
 	while(stack_b)
 	{

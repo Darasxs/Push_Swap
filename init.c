@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 17:55:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/02 18:04:40 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/10 17:52:37 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,31 +40,28 @@ static long	ft_atol(const char *str)
 	return (result * sign);
 }
 
-t_list	*initialize_stack(char **argv)
+void	initialize_stack(t_list **stack, char **argv)
 {
 	size_t	i;
 	long	number;
-	t_list	*stack;
 	t_list	*node;
 
-	stack = NULL;
 	i = 0;
 	while (argv[i])
 	{
 		if(*argv[i] == '\0')
-			return_error(&stack);
+			return_error(stack);
 		if (string_error(argv[i]) == false)
-			return_error(&stack);
+			return_error(stack);
 		number = ft_atol(argv[i]);
 		if(number > INT_MAX || number < INT_MIN)
-			return_error(&stack);
-		if (check_duplicate(stack, number))
-			return_error(&stack);
+			return_error(stack);
+		if (check_duplicate(*stack, number))
+			return_error(stack);
 		node = ft_lstnew(number);
 		if (!node)
-			return_error(&stack);
-		ft_lstadd_back(&stack, node);
+			return_error(stack);
+		ft_lstadd_back(stack, node);
 		i++;
 	}
-	return (stack);
 }

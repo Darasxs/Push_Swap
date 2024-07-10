@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 19:02:00 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/08 17:43:23 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/10 17:51:58 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ bool	check_duplicate(t_list *head, long n)
 	t_list	*tmp;
 
 	tmp = head;
+	if (!tmp)
+		return (0);
 	while (tmp)
 	{
 		if (tmp->content == n)

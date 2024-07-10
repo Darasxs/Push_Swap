@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:44 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/09 19:05:19 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/10 17:49:53 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	sa(t_list **stack, int check);
 void	sb(t_list **stack, int check);
 void	ss(t_list **stack_a, t_list **stack_b);
 int		return_error(t_list **stack);
-t_list	*initialize_stack(char **argv);
+void	initialize_stack(t_list **stack_a, char **argv);
 bool	is_sorted(t_list *head);
 bool	string_error(char *str);
 bool	check_duplicate(t_list *head, long n);
