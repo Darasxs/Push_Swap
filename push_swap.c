@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 13:44:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/10 19:07:10 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/10 19:22:46 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	push_nodes_back(t_list **stack_a, t_list **stack_b)
 
 void	push_swap(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*smallest;
+	t_list	*smallest;	
 
 	while (ft_lstsize(*stack_a) > 3)
 		pb(stack_a, stack_b);
