@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 13:44:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/10 10:51:55 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/10 14:09:29 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ void	push_nodes_back(t_list **stack_a, t_list **stack_b)
 
 void	push_swap(t_list **stack_a, t_list **stack_b)
 {
+	t_list	*smallest;
+
 	while ((*stack_a)->next->next->next != NULL)
 		pa(stack_a, stack_b);
 	sort_three(stack_a);
@@ -99,4 +101,14 @@ void	push_swap(t_list **stack_a, t_list **stack_b)
 		initialize_nodes(*stack_a, *stack_b);
 		push_nodes_back(stack_a, stack_b);
 	}
+	present_location(*stack_a);
+	smallest = find_smallest_number(*stack_a);
+	if(smallest->above_medium)
+	{
+		while(*stack_a != smallest)
+			ra(stack_a, true);
+	}
+	else
+		while(*stack_a != smallest)
+			rra(stack_a, true);
 }
