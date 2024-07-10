@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 17:55:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/10 17:52:37 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/10 18:55:02 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,31 @@ void	initialize_stack(t_list **stack, char **argv)
 	{
 		if(*argv[i] == '\0')
 			return_error(stack);
+		//write(1, "1", 1);
 		if (string_error(argv[i]) == false)
 			return_error(stack);
+		//write(1, "2", 1);
 		number = ft_atol(argv[i]);
 		if(number > INT_MAX || number < INT_MIN)
 			return_error(stack);
-		if (check_duplicate(*stack, number))
-			return_error(stack);
+		//write(1, "3", 1);
 		node = ft_lstnew(number);
 		if (!node)
 			return_error(stack);
+		//write(1, "4", 1);
 		ft_lstadd_back(stack, node);
+		//printf("Hell\n");
+		//t_list	*tmp;
+		//tmp = *stack;
+		//printf("stack_a:\n");
+		//while(tmp != NULL)
+		//{
+		//	printf("%d\n", tmp->content);
+		//	tmp = tmp->next;
+		//}
+		if (check_duplicate(*stack, number))
+			return_error(stack);
+		//write(1, "5", 1);
 		i++;
 	}
 }

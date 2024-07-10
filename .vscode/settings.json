@@ -9,7 +9,12 @@
 		"streambuf": "c",
 		"__functional_03": "c",
 		"functional": "c",
-		"stddef.h": "c"
+		"stddef.h": "c",
+		"__split_buffer": "c",
+		"istream": "c",
+		"locale": "c",
+		"string": "c",
+		"vector": "c"
 	},
 	"github.copilot.editor.enableAutoCompletions": false
 }

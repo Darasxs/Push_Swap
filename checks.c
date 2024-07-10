@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 19:02:00 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/10 17:51:58 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/10 18:55:19 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,20 @@ bool	is_sorted(t_list *head)
 bool	check_duplicate(t_list *head, long n)
 {
 	t_list	*tmp;
+	int		counter;
 
+	counter = 0;
 	tmp = head;
 	if (!tmp)
 		return (0);
 	while (tmp)
 	{
 		if (tmp->content == n)
-			return (true);
+			counter++;
 		tmp = tmp->next;
 	}
+	if (counter > 1)
+		return (true);
 	return (false);
 }
 

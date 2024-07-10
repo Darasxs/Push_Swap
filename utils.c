@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 12:59:04 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/10 14:03:41 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/10 19:20:21 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	determine_price(t_list *stack_a, t_list *stack_b)
 		if (stack_b->above_medium == true)
 			stack_b->price = stack_b->location;
 		else if (stack_b->above_medium == false)
-			stack_b->above_medium = len_b - (stack_b->location);
+			stack_b->price = len_b - (stack_b->location);
 		if (stack_b->target->above_medium == true)
 			stack_b->price += stack_b->target->location;
 		else if (stack_b->target->above_medium == false)
@@ -82,7 +82,7 @@ void	determine_cheapest(t_list *stack_b)
 	best_match = stack_b;
 	if (!stack_b)
 		return ;
-	while (stack_b)
+	while (tmp)
 	{
 		if (tmp->price < best_match->price)
 			best_match = tmp;
