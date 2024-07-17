@@ -6,12 +6,13 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 13:44:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/10 19:22:46 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/17 17:42:46 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// matches each node in stack_b with a target node in stack_a
 void	match_nodes(t_list *stack_a, t_list *stack_b)
 {
 	t_list	*target;
@@ -23,7 +24,7 @@ void	match_nodes(t_list *stack_a, t_list *stack_b)
 		tmp = stack_a;
 		while (tmp)
 		{
-			if ((target == NULL || tmp->content > target->content)
+			if ((target == NULL || tmp->content < target->content)
 				&& stack_b->content < tmp->content)
 				target = tmp;
 			tmp = tmp->next;
@@ -45,70 +46,74 @@ void	initialize_nodes(t_list *stack_a, t_list *stack_b)
 	determine_cheapest(stack_b);
 }
 
+// rotates the stacks to move the cheapest node to the top
 void	stacks_rotation(t_list **stack, t_list *cheapest, char a_or_b)
 {
-	while(*stack != cheapest)
+	while (*stack != cheapest)
 	{
-		if(a_or_b == 'a')
+		if (a_or_b == 'a')
 		{
-			if(cheapest->above_medium)
+			if (cheapest->above_medium)
 				ra(stack, 1);
 			else
 				rra(stack, 1);
 		}
-		else if(a_or_b == 'b')
+		else if (a_or_b == 'b')
 		{
-			if(cheapest->above_medium)
+			if (cheapest->above_medium)
 				rb(stack, 1);
 			else
 				rrb(stack, 1);
 		}
 	}
 }
+
+// moving nodes from stack_b back to stack_a
 void	push_nodes_back(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*cheapest;
 
 	cheapest = find_cheapest_node(*stack_b);
-	if(cheapest->above_medium && cheapest->target->above_medium)
+	if (cheapest && cheapest->above_medium && cheapest->target->above_medium)
 	{
-		while(*stack_a != cheapest->target && *stack_b != cheapest)
+		while (cheapest && *stack_a != cheapest->target && *stack_b != cheapest)
 			rr(stack_a, stack_b);
 		present_location(*stack_a);
 		present_location(*stack_b);
 	}
-	else if(cheapest->above_medium == false && cheapest->target->above_medium == false)
+	else if (cheapest && cheapest->above_medium == false
+		&& cheapest->target->above_medium == false)
 	{
-		while(*stack_a != cheapest->target && *stack_b != cheapest)
+		while (*stack_a != cheapest->target && *stack_b != cheapest)
 			rrr(stack_a, stack_b);
 		present_location(*stack_a);
 		present_location(*stack_b);
 	}
-	stacks_rotation(stack_a, cheapest, 'b');
-	stacks_rotation(stack_b, cheapest->target, 'a');
+	stacks_rotation(stack_b, cheapest, 'b');
+	stacks_rotation(stack_a, cheapest->target, 'a');
 	pa(stack_a, stack_b);
 }
 
 void	push_swap(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*smallest;	
+	t_list	*smallest;
 
 	while (ft_lstsize(*stack_a) > 3)
 		pb(stack_a, stack_b);
 	sort_three(stack_a);
-	while(stack_b)
+	while (stack_b && *stack_b)
 	{
 		initialize_nodes(*stack_a, *stack_b);
 		push_nodes_back(stack_a, stack_b);
 	}
 	present_location(*stack_a);
 	smallest = find_smallest_number(*stack_a);
-	if(smallest->above_medium)
+	if (smallest->above_medium)
 	{
-		while(*stack_a != smallest)
+		while (*stack_a != smallest)
 			ra(stack_a, true);
 	}
 	else
-		while(*stack_a != smallest)
+		while (*stack_a != smallest)
 			rra(stack_a, true);
 }

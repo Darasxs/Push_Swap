@@ -1,0 +1,3 @@
+every node in STACK_B has a target node
+the target node is a node that is the smallest bigger, or the smallest
+	if the node in STACK_B is the biggest

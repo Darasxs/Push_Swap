@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 15:09:50 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/10 19:07:04 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/16 18:18:55 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	pb(t_list **stack_a, t_list **stack_b)
 	t_list	*tmp;
 
 	write(1, "pb\n", 3);
-	if(stack_a != NULL)
+	if(stack_a != NULL && *stack_a != NULL)
 	{
 		if(*stack_a)
 		{
@@ -34,9 +34,9 @@ void	pa(t_list **stack_a, t_list **stack_b)
 	t_list	*tmp;
 	
 	write(1, "pa\n", 3);
-	if(stack_b != NULL)
+	if(stack_b != NULL && *stack_b != NULL)
 	{
-		if(*stack_a)
+		if(*stack_b)
 		{
 			tmp = *stack_b;
 			*stack_b = (*stack_b)->next;

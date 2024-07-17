@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 12:59:04 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/10 19:20:21 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/17 15:48:33 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	determine_price(t_list *stack_a, t_list *stack_b)
 			stack_b->price = stack_b->location;
 		else if (stack_b->above_medium == false)
 			stack_b->price = len_b - (stack_b->location);
-		if (stack_b->target->above_medium == true)
+		if (stack_b->target && stack_b->target->above_medium == true) // tu jest problem
 			stack_b->price += stack_b->target->location;
 		else if (stack_b->target->above_medium == false)
 			stack_b->price += len_a - (stack_b->target->location);

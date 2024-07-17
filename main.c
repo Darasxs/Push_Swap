@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:47 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/10 19:32:27 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/17 18:04:48 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,23 +41,23 @@ int	main(int argc, char **argv)
 		else
 			push_swap(&stack_a, &stack_b);
 	}
-	t_list	*tmp;
-	t_list	*tmp2;
+	//t_list	*tmp;
+	//t_list	*tmp2;
 	
-	tmp = stack_a;
-	tmp2 = stack_b;
+	//tmp = stack_a;
+	//tmp2 = stack_b;
 
-	printf("stack_a:\n");
-	while(tmp != NULL)
-	{
-		printf("%d\n", tmp->content);
-		tmp = tmp->next;
-	}
-	printf("stack_b:\n");
-	while(tmp2 != NULL)
-	{
-		printf("%d\n", tmp2->content);
-		tmp2 = tmp2->next;
-	}
+	//printf("stack_a:\n");
+	//while(tmp != NULL)
+	//{
+	//	printf("%d\n", tmp->content);
+	//	tmp = tmp->next;
+	//}
+	//printf("stack_b:\n");
+	//while(tmp2 != NULL)
+	//{
+	//	printf("%d\n", tmp2->content);
+	//	tmp2 = tmp2->next;
+	//}
 	return (0);
 }

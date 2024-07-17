@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 17:55:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/10 19:21:26 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/17 13:07:19 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ void	initialize_stack(t_list **stack, char **argv)
 		if(number > INT_MAX || number < INT_MIN)
 			return_error(stack);
 		node = ft_lstnew(number);
-		if (!node)
-			return_error(stack);
+		if (!node) 
+	 		return_error(stack);
 		ft_lstadd_back(stack, node);
 		if (check_duplicate(*stack, number))
 			return_error(stack);
