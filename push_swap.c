@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 13:44:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/17 17:42:46 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:00:05 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	push_nodes_back(t_list **stack_a, t_list **stack_b)
 		present_location(*stack_a);
 		present_location(*stack_b);
 	}
-	else if (cheapest && cheapest->above_medium == false
+	else if (!cheapest && cheapest->above_medium == false
 		&& cheapest->target->above_medium == false)
 	{
 		while (*stack_a != cheapest->target && *stack_b != cheapest)
