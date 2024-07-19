@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:47 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/18 19:00:09 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/19 14:20:37 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,11 @@ int	main(int argc, char **argv)
 		else
 			push_swap(&stack_a, &stack_b);
 	}
+
+	// free the memory for split !!!
+	// free stack_a and stack_b !!!
+
+	
 	//t_list	*tmp;
 	//t_list	*tmp2;
 	

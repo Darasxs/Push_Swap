@@ -1,3 +1,25 @@
+I push every node from A to B until there are only 3 nodes left in A and then I sort those 3 nodes in A
+
+later I need to match nodes so that:
 every node in STACK_B has a target node
-the target node is a node that is the smallest bigger, or the smallest
-	if the node in STACK_B is the biggest
+the target node is a node in A that is the smallest bigger, or the smallest if the node in STACK_B is the biggest
+
+Every node needs to have its current position and it has to be refreshed everytime when the push is done
+
+push price is the sum of the current position of the node and the target node
+the cost is how much does it cost to bring the element and the target element to the top position of the stacks
+
+the cost is proportional to the position and the length of the stack (above/below medium) 
+the cost is the length minus the position
+
+then we flag the cheapest, it is the flag inside a node itself
+
+
+so we get the cheapest and if chepeast node is above the medium and the cheapest node target node is above the medium
+if both cheapest and target then we rotate both
+
+if they are both below medium we reverse rotate both 
+
+later we also check if the rotation is finished in the stacks_rotation function, namely is the target node in the a or the cheapest node in B
+at the top, if its not the case just finish the rotation
+

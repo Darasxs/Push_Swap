@@ -6,13 +6,12 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 13:44:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/18 19:00:05 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/19 14:14:28 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// matches each node in stack_b with a target node in stack_a
 void	match_nodes(t_list *stack_a, t_list *stack_b)
 {
 	t_list	*target;
@@ -45,8 +44,6 @@ void	initialize_nodes(t_list *stack_a, t_list *stack_b)
 	determine_price(stack_a, stack_b);
 	determine_cheapest(stack_b);
 }
-
-// rotates the stacks to move the cheapest node to the top
 void	stacks_rotation(t_list **stack, t_list *cheapest, char a_or_b)
 {
 	while (*stack != cheapest)
@@ -68,7 +65,6 @@ void	stacks_rotation(t_list **stack, t_list *cheapest, char a_or_b)
 	}
 }
 
-// moving nodes from stack_b back to stack_a
 void	push_nodes_back(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*cheapest;
