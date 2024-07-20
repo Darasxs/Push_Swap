@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:47 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/20 16:58:08 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/20 17:53:41 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,13 @@ int	main(int argc, char **argv)
 	//printf("stack_a:\n");
 	//while(tmp != NULL)
 	//{
-	//	printf("%d\n", tmp->content);
+	//	printf("%ld\n", tmp->content);
 	//	tmp = tmp->next;
 	//}
 	//printf("stack_b:\n");
 	//while(tmp2 != NULL)
 	//{
-	//	printf("%d\n", tmp2->content);
+	//	printf("%ld\n", tmp2->content);
 	//	tmp2 = tmp2->next;
 	//}
 	return (0);
