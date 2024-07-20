@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 19:02:00 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/10 18:55:19 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/19 19:42:02 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ bool	is_sorted(t_list *head)
 			return (false);
 		tmp = tmp->next;
 	}
+	write(1, "OK\n", 3);
 	return (true);
 }
 

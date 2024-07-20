@@ -9,6 +9,7 @@ Every node needs to have its current position and it has to be refreshed everyti
 push price is the sum of the current position of the node and the target node
 the cost is how much does it cost to bring the element and the target element to the top position of the stacks
 
+for each node in stack B the algorithm calculates the cost of bringing both the node and its target node to the top position of their stacks
 the cost is proportional to the position and the length of the stack (above/below medium) 
 the cost is the length minus the position
 

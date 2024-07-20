@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:47 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/19 14:20:37 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/20 16:58:08 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return EXIT_FAILURE;
+		return EXIT_FAILURE; 
 	else if (argc == 2)
 	{
 		arguments = ft_split(argv[1], ' ');
 		initialize_stack(&stack_a, arguments);
+		free_split(arguments);
 	}
 	else
 		initialize_stack(&stack_a, arguments + 1);
@@ -41,9 +42,7 @@ int	main(int argc, char **argv)
 		else
 			push_swap(&stack_a, &stack_b);
 	}
-
-	// free the memory for split !!!
-	// free stack_a and stack_b !!!
+	free_stack(&stack_a);
 
 	
 	//t_list	*tmp;

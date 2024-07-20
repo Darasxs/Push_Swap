@@ -6,28 +6,41 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 17:54:29 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/19 13:49:31 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/20 17:00:01 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_list(t_list *stack)
+void	free_split(char **arguments)
 {
-	t_list	*tmp;
+	int	i;
 
-	while(stack)
+	i = 0;
+	while(arguments[i])
 	{
-		tmp = stack;
-		stack = stack->next;
-		free(tmp);
+		free(arguments[i]);
+		i++;
 	}
-	stack = NULL;
+	free(arguments);
 }
+
 int		return_error(t_list **stack)
 {
-	free_list(*stack);
+	free_stack(stack);
 
 	write(1, "Error\n", 6);
 	exit(1);
+}
+
+void	free_stack(t_list **stack)
+{
+	t_list	*tmp;
+
+	while(*stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
 }
