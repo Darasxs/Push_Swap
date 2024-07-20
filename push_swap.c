@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 13:44:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/20 17:36:59 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/20 18:31:11 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	initialize_nodes(t_list *stack_a, t_list *stack_b)
 	determine_price(stack_a, stack_b);
 	determine_cheapest(stack_b);
 }
+
 void	stacks_rotation(t_list **stack, t_list *cheapest, char a_or_b)
 {
 	while (*stack != cheapest)
@@ -90,7 +91,7 @@ void	push_nodes_back(t_list **stack_a, t_list **stack_b)
 	pa(stack_a, stack_b);
 }
 
-void		push_swap(t_list **stack_a, t_list **stack_b)
+void	push_swap(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*smallest;
 

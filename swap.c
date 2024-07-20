@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:09:16 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/03 10:53:16 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/20 18:30:30 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	sa(t_list **stack, int check)
 {
 	t_list	*tmp1;
 	t_list	*tmp2;
-	
-	if(check == 1)
+
+	if (check == 1)
 		write(1, "sa\n", 3);
 	if (stack != NULL)
 	{

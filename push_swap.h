@@ -6,21 +6,21 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:44 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/20 16:55:52 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/20 18:38:04 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "./Libft/libft.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <limits.h>
+# include "./Libft/libft.h"
+# include <limits.h>
+# include <stdbool.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-//int		main(int argc, char **argv);
+// int		main(int argc, char **argv);
 void	pa(t_list **stack_a, t_list **stack_b);
 void	pb(t_list **stack_a, t_list **stack_b);
 void	ra(t_list **stack, int check);
@@ -49,5 +49,6 @@ t_list	*find_cheapest_node(t_list *stack);
 void	push_swap(t_list **stack_a, t_list **stack_b);
 void	free_split(char **arguments);
 void	free_stack(t_list **stack);
+void	start_sorting(t_list *stack_a, t_list *stack_b);
 
 #endif

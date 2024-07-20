@@ -6,12 +6,21 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 17:55:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/20 18:00:33 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/20 18:37:57 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	start_sorting(t_list *stack_a, t_list *stack_b)
+{
+	if (ft_lstsize(stack_a) == 2)
+		sa(&stack_a, 1);
+	else if (ft_lstsize(stack_a) == 3)
+		sort_three(&stack_a);
+	else
+		push_swap(&stack_a, &stack_b);
+}
 static long	ft_atol(const char *str)
 {
 	long	result;
@@ -49,16 +58,16 @@ void	initialize_stack(t_list **stack, char **argv)
 	i = 0;
 	while (argv[i])
 	{
-		if(*argv[i] == '\0')
+		if (*argv[i] == '\0')
 			return_error(stack);
 		if (string_error(argv[i]) == false)
 			return_error(stack);
 		number = ft_atol(argv[i]);
-		if(number > INT_MAX || number < INT_MIN)
+		if (number > INT_MAX || number < INT_MIN)
 			return_error(stack);
 		node = ft_lstnew(number);
 		if (!node)
-	 		return_error(stack);
+			return_error(stack);
 		ft_lstadd_back(stack, node);
 		if (check_duplicate(*stack, number))
 			return_error(stack);

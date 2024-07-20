@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 12:34:54 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/05/30 18:03:17 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/20 18:31:00 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,21 @@
 
 static t_list	*last_elem(t_list *stack)
 {
-	while(stack && stack->next)
+	while (stack && stack->next)
 		stack = stack->next;
 	return (stack);
 }
+
 void	ra(t_list **stack, int check)
 {
 	t_list	*tmp1;
 	t_list	*tmp2;
 
-	if(check == 1)
+	if (check == 1)
 		write(1, "ra\n", 3);
 	if (stack != NULL)
 	{
-		if(*stack && (*stack)->next)
+		if (*stack && (*stack)->next)
 		{
 			tmp1 = *stack;
 			*stack = (*stack)->next;
@@ -43,11 +44,11 @@ void	rb(t_list **stack, int check)
 	t_list	*tmp1;
 	t_list	*tmp2;
 
-	if(check == 1)
+	if (check == 1)
 		write(1, "rb\n", 3);
 	if (stack != NULL)
 	{
-		if(*stack && (*stack)->next)
+		if (*stack && (*stack)->next)
 		{
 			tmp1 = *stack;
 			*stack = (*stack)->next;

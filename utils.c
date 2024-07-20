@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 12:59:04 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/20 16:55:40 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/20 18:29:10 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ t_list	*find_smallest_number(t_list *stack)
 	}
 	return (smallest);
 }
+
 void	determine_price(t_list *stack_a, t_list *stack_b)
 {
 	size_t	len_a;
@@ -92,7 +93,7 @@ void	determine_cheapest(t_list *stack_b)
 }
 
 t_list	*find_cheapest_node(t_list *stack)
-{	
+{
 	if (!stack)
 		return (NULL);
 	while (stack)
