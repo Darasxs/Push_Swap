@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 17:55:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/21 15:22:30 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/21 16:09:47 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static long	ft_atol(const char *str)
 	return (result * sign);
 }
 
-void	initialize_stack(t_list **stack, char **argv)
+void	initialize_stack(t_list **stack, char **argv, int split_flag)
 {
 	size_t	i;
 	long	number;
@@ -50,18 +50,18 @@ void	initialize_stack(t_list **stack, char **argv)
 	while (argv[i])
 	{
 		if (*argv[i] == '\0')
-			return_error(stack);
+			return_error(stack, argv, split_flag);
 		if (string_error(argv[i]) == false)
-			return_error(stack);
+			return_error(stack, argv, split_flag);
 		number = ft_atol(argv[i]);
 		if (number > INT_MAX || number < INT_MIN)
-			return_error(stack);
+			return_error(stack, argv, split_flag);
 		node = ft_lstnew(number);
 		if (!node)
-			return_error(stack);
+			return_error(stack, argv, split_flag);
 		ft_lstadd_back(stack, node);
 		if (check_duplicate(*stack, number))
-			return_error(stack);
+			return_error(stack, argv, split_flag);
 		i++;
 	}
 }

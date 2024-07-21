@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 19:02:00 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/20 17:53:40 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/21 16:10:00 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ bool	string_error(char *str)
 	counter = 0;
 	while (*str)
 	{
+		//if (*str == ' ')
+		//split i rekursywnie wroc do poczatku, zeby sprawdzic czy sa bledy
 		if (*str == '-')
 			counter++;
 		else if (!(*str >= '0' && *str <= '9'))
