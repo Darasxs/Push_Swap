@@ -6,21 +6,12 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 17:55:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/20 18:37:57 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/21 15:22:30 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	start_sorting(t_list *stack_a, t_list *stack_b)
-{
-	if (ft_lstsize(stack_a) == 2)
-		sa(&stack_a, 1);
-	else if (ft_lstsize(stack_a) == 3)
-		sort_three(&stack_a);
-	else
-		push_swap(&stack_a, &stack_b);
-}
 static long	ft_atol(const char *str)
 {
 	long	result;

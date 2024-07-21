@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 17:54:29 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/20 18:25:51 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/21 14:01:26 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,14 @@ void	free_split(char **arguments)
 
 int	return_error(t_list **stack)
 {
-	free_stack(stack);
+	t_list	*tmp;
+	
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
 	write(1, "Error\n", 6);
 	exit(1);
 }
