@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:47 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/21 16:09:50 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/21 16:29:53 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	start_sorting(t_list *stack_a, t_list *stack_b)
 		sort_three(&stack_a);
 	else
 		push_swap(&stack_a, &stack_b);
-
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 }
