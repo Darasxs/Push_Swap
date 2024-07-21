@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:44 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/21 16:41:43 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/21 18:17:23 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ void	push_swap(t_list **stack_a, t_list **stack_b);
 void	free_split(char **arguments);
 void	free_stack(t_list **stack);
 void	start_sorting(t_list *stack_a, t_list *stack_b);
+void	setup(int argc, char **argv, t_list **stack_a, int *split_flag);
 
 #endif

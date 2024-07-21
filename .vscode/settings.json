@@ -14,7 +14,8 @@
 		"istream": "c",
 		"locale": "c",
 		"string": "c",
-		"vector": "c"
+		"vector": "c",
+		"stack": "c"
 	},
 	"github.copilot.editor.enableAutoCompletions": false
 }
