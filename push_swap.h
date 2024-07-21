@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:44 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/21 16:08:55 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/21 16:41:43 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-// int		main(int argc, char **argv);
 void	pa(t_list **stack_a, t_list **stack_b);
 void	pb(t_list **stack_a, t_list **stack_b);
 void	ra(t_list **stack, int check);

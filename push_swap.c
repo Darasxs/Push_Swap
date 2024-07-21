@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 13:44:09 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/20 18:31:11 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/21 18:00:39 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,18 +71,16 @@ void	push_nodes_back(t_list **stack_a, t_list **stack_b)
 	t_list	*cheapest;
 
 	cheapest = find_cheapest_node(*stack_b);
-	if (cheapest && cheapest->above_medium && cheapest->target->above_medium)
+	while (cheapest->above_medium && cheapest->target->above_medium)
 	{
-		while (cheapest && *stack_a != cheapest->target && *stack_b != cheapest)
-			rr(stack_a, stack_b);
+		rr(stack_a, stack_b);
 		present_location(*stack_a);
 		present_location(*stack_b);
 	}
-	else if (!cheapest && cheapest->above_medium == false
+	while (cheapest->above_medium == false
 		&& cheapest->target->above_medium == false)
 	{
-		while (*stack_a != cheapest->target && *stack_b != cheapest)
-			rrr(stack_a, stack_b);
+		rrr(stack_a, stack_b);
 		present_location(*stack_a);
 		present_location(*stack_b);
 	}
@@ -106,10 +104,8 @@ void	push_swap(t_list **stack_a, t_list **stack_b)
 	present_location(*stack_a);
 	smallest = find_smallest_number(*stack_a);
 	if (smallest->above_medium)
-	{
 		while (*stack_a != smallest)
 			ra(stack_a, true);
-	}
 	else
 		while (*stack_a != smallest)
 			rra(stack_a, true);
