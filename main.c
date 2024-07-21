@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:47 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/21 18:24:39 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/21 18:45:45 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,14 @@ void	start_sorting(t_list *stack_a, t_list *stack_b)
 	free_stack(&stack_b);
 }
 
-void	setup(int argc, char **argv, t_list **stack_a, int *split_flag)
+void	initialize_stacks(int argc, char **argv, t_list **stack_a,
+		int *split_flag)
 {
 	char	**arguments;
 
+	*stack_a = NULL;
+	*split_flag = 0;
+	arguments = argv;
 	if (argc == 2)
 	{
 		*split_flag = 1;
@@ -38,10 +42,7 @@ void	setup(int argc, char **argv, t_list **stack_a, int *split_flag)
 		free_split(arguments);
 	}
 	else
-	{
-		arguments = argv + 1;
 		initialize_stack(stack_a, arguments + 1, *split_flag);
-	}
 }
 
 int	main(int argc, char **argv)
@@ -50,14 +51,12 @@ int	main(int argc, char **argv)
 	t_list	*stack_b;
 	int		split_flag;
 
-	stack_a = NULL;
-	stack_b = NULL;
-	split_flag = 0;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (EXIT_FAILURE);
-	setup(argc, argv, &stack_a, &split_flag);
+	initialize_stacks(argc, argv, &stack_a, &split_flag);
 	if (!stack_a)
 		return (EXIT_FAILURE);
+	stack_b = NULL;
 	if (!is_sorted(stack_a))
 		start_sorting(stack_a, stack_b);
 	else
