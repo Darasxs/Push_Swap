@@ -6,7 +6,7 @@
 /*   By: dpaluszk <dpaluszk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:11:47 by dpaluszk          #+#    #+#             */
-/*   Updated: 2024/07/21 18:19:41 by dpaluszk         ###   ########.fr       */
+/*   Updated: 2024/07/21 18:24:39 by dpaluszk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,7 @@ int	main(int argc, char **argv)
 	split_flag = 0;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (EXIT_FAILURE);
-
 	setup(argc, argv, &stack_a, &split_flag);
-	
 	if (!stack_a)
 		return (EXIT_FAILURE);
 	if (!is_sorted(stack_a))
